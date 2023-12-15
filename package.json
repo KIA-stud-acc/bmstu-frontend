@@ -1,5 +1,7 @@
 {
   "name": "my-app",
+  
+  "homepage": "https://KIA-stud-acc.github.io/bmstu-frontend/", 
   "private": true,
   "version": "0.0.0",
   "type": "module",
