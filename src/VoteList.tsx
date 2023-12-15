@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
 import './VoteList.css'
 import {Breadcrumb} from 'react-bootstrap'
-import InputField from './components/InputField'
-import VotingCard from './components/VotingCard'
+//import InputField from './components/InputField'
+//import VotingCard from './components/VotingCard'
+
+import InputField from './InputField'
+import VotingCard from './VotingCard'
+
 import { Voting, searchInVoteList } from './modules/search-in-vote-list.ts'
 
 
