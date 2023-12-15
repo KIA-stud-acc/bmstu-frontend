@@ -11,7 +11,7 @@ interface Props {
 
 function enterHandler(key: string, func: any, value: string){
     if (key == "Enter"){
-        document.activeElement?.blur();
+        (document.activeElement as HTMLElement).blur();
         func(value);
     }
 }

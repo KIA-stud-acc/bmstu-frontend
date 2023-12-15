@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './VoteList.css'
 import {Breadcrumb} from 'react-bootstrap'
 import InputField from './components/InputField'
@@ -41,7 +41,7 @@ useEffect(() => {
             />
         <br/>
         <div className="card-deck">
-              {voting.map((item, index)=> (
+              {voting.map((item)=> (
                       <VotingCard {...item} />
               ))}
         </div>

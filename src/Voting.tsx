@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Voting.css'
-import { useParams,Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Voting, voteById } from './modules/vote-by-id.ts'
 import {Breadcrumb} from 'react-bootstrap'
 

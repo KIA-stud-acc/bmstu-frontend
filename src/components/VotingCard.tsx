@@ -11,7 +11,7 @@ interface Props {
 }
 
 
-const VotingCard: FC<Props> = ({ id, name, type, image_src }) => (
+const VotingCard: FC<Props> = ({ id, name, image_src }) => (
     <Card className = "d-inline-block">
         <Card.Img className="card-img-top" src={image_src || 'https://dostavka.phali-hinkali.ru/murino/api2/images/placeholder_1000x.jpg'} alt = {name} />
         <Card.Body>                
