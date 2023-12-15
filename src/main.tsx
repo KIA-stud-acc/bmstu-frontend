@@ -14,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/vybory',
     element: <VoteList/>
+  },
+  {
+    path: '/',
+    element: <a href="/vybory">выборы</a>
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')!).render(
