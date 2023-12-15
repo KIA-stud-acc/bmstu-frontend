@@ -12,5 +12,6 @@ export default defineConfig({
               },
             }, 
           },
+  base: '/bmstu-frontend/',
   plugins: [react()],
 })
