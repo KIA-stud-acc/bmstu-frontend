@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FC } from 'react'
 import './VoteList.css'
 import {Breadcrumb} from 'react-bootstrap'
 import InputField from './components/InputField'
@@ -8,7 +8,7 @@ import { Voting, searchInVoteList } from './modules/search-in-vote-list.ts'
 
 
 
-function VoteList() {
+const VoteList: FC = () => {
   const [searchValue, setSearchValue] = useState('')
   const [voting, setVote] = useState<Voting[]>([])
   const [searchQuery, setSearchQuery] = useState('')
