@@ -19,7 +19,7 @@ const VotingCard: FC<Props> = ({ id, name, image_src }) => (
                 <Card.Title>{name}</Card.Title>
             </div>
             <div className = "execBtn">
-                <Button className="cardButton" href={`/vybory/${id}`} variant="primary">Узнать больше</Button>
+                <Button className="cardButton" href={`/bmstu-frontend/vybory/${id}`} variant="primary">Узнать больше</Button>
                 <a className = "add" href='#'>
                     <img src="https://atvin.ru/img/basket1.svg" alt="Добавить в корзину" height = "20"/>
                 </a>
