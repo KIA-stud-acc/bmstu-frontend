@@ -18,7 +18,7 @@ const router = createBrowserRouter(
   },
   {
     path: '/bmstu-frontend/',
-    element: <a href='/vybory'><h1>TEST SUCCESS</h1></a>
+    element: <a href='/bmstu-frontend/vybory'><h1>TEST SUCCESS</h1></a>
   }
 ])
 
