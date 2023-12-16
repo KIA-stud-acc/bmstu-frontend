@@ -14,6 +14,7 @@ const App: React.FC = () => {
             <Routes>
                 <Route path="/vybory/" element={<VoteList/>}/>
                 <Route path="/vybory/:id" element={<VotingPage/>}/>
+                <Route path="/" element={<h1>goitgiortoty</h1>}/>
             </Routes>
         </HashRouter>
 
