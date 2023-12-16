@@ -9,12 +9,16 @@ import NavBar from './components/navbar'
 const router = createBrowserRouter(
   [
   {
-    path: '/vybory/:id',
+    path: '/bmstu-frontend/vybory/:id',
     element: <VotingPage/>
   },
   {
-    path: '/vybory',
+    path: '/bmstu-frontend/vybory',
     element: <VoteList/>
+  }
+  {
+    path: '/bmstu-frontend/',
+    element: <a href='/vybory'><h1>TEST SUCCESS</h1></a>
   }
 ])
 
