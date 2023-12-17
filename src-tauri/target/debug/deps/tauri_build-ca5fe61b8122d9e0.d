@@ -1,0 +1,10 @@
+C:\Users\Илья\Desktop\bmstu-frontend-tauri\user-interface\src-tauri\target\debug\deps\libtauri_build-ca5fe61b8122d9e0.rmeta: C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\lib.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\allowlist.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\static_vcruntime.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\window-app-manifest.xml
+
+C:\Users\Илья\Desktop\bmstu-frontend-tauri\user-interface\src-tauri\target\debug\deps\libtauri_build-ca5fe61b8122d9e0.rlib: C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\lib.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\allowlist.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\static_vcruntime.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\window-app-manifest.xml
+
+C:\Users\Илья\Desktop\bmstu-frontend-tauri\user-interface\src-tauri\target\debug\deps\tauri_build-ca5fe61b8122d9e0.d: C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\lib.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\allowlist.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\static_vcruntime.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\window-app-manifest.xml
+
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\lib.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\allowlist.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\static_vcruntime.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tauri-build-1.5.0\src\window-app-manifest.xml:

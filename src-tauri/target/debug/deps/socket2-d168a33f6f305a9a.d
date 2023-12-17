@@ -1,0 +1,11 @@
+C:\Users\Илья\Desktop\bmstu-frontend-tauri\user-interface\src-tauri\target\debug\deps\libsocket2-d168a33f6f305a9a.rmeta: C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\lib.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sockaddr.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\socket.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sockref.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sys\windows.rs
+
+C:\Users\Илья\Desktop\bmstu-frontend-tauri\user-interface\src-tauri\target\debug\deps\libsocket2-d168a33f6f305a9a.rlib: C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\lib.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sockaddr.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\socket.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sockref.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sys\windows.rs
+
+C:\Users\Илья\Desktop\bmstu-frontend-tauri\user-interface\src-tauri\target\debug\deps\socket2-d168a33f6f305a9a.d: C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\lib.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sockaddr.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\socket.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sockref.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sys\windows.rs
+
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\lib.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sockaddr.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\socket.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sockref.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\socket2-0.4.10\src\sys\windows.rs:

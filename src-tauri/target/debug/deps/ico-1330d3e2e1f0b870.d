@@ -1,0 +1,12 @@
+C:\Users\Илья\Desktop\bmstu-frontend-tauri\user-interface\src-tauri\target\debug\deps\libico-1330d3e2e1f0b870.rmeta: C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\lib.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\macros.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\bmpdepth.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\icondir.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\image.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\restype.rs
+
+C:\Users\Илья\Desktop\bmstu-frontend-tauri\user-interface\src-tauri\target\debug\deps\libico-1330d3e2e1f0b870.rlib: C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\lib.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\macros.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\bmpdepth.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\icondir.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\image.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\restype.rs
+
+C:\Users\Илья\Desktop\bmstu-frontend-tauri\user-interface\src-tauri\target\debug\deps\ico-1330d3e2e1f0b870.d: C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\lib.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\macros.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\bmpdepth.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\icondir.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\image.rs C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\restype.rs
+
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\lib.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\macros.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\bmpdepth.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\icondir.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\image.rs:
+C:\Users\Илья\.cargo\registry\src\index.crates.io-6f17d22bba15001f\ico-0.3.0\src\restype.rs:
