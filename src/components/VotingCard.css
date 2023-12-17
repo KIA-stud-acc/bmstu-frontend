@@ -1,0 +1,24 @@
+
+.card{
+    width: 15rem;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    border-radius: 1rem;
+    border: solid black 1px;
+    margin-bottom: 0.5em;
+    top: 0;
+    position: relative;
+    margin-right: 1rem;
+  }
+ .card-img {
+  width: 15rem;
+   height: 15rem;
+   background-color: rgb(218, 218, 218);
+ }
+  
+  .add{
+    width: 2.5rem;
+    height: 2.5rem;
+    float: right;
+  }
