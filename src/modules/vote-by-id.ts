@@ -17,7 +17,7 @@ const filterVotingDataById = (votingArray: Voting[], idFilter: number): Voting |
 
 
 export const voteById = async (id = ''): Promise<Voting> =>{
-    return fetch(`http://127.0.0.1:8000/vybory/${id}`)
+    return fetch(`../../api/vybory/${id}/`)
         .then((response) => response.json())
         .catch(()=> (filterVotingDataById(mockVoteList['voting'], Number(id))))
 }

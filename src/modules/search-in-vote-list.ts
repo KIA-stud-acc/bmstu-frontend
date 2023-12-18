@@ -21,7 +21,7 @@ const filterVotingData = (votingArray: Voting[], nameFilter: string): Voting[] =
 
 
 export const searchInVoteList = async (text=''): Promise<VoteList> =>{
-    return fetch(`api/vybory/?text=${text}`)
+    return fetch(`../api/vybory/?text=${text}`)
         .then((response) => response.json())
         .catch(()=> ({voting:filterVotingData(mockVoteList['voting'], text),draftID:0}))
 }
