@@ -16,6 +16,7 @@ function enterHandler(key: string, func: any, value: string){
     }
 }
 
+
 const InputField: FC<Props> = ({ value, setValue, onEnter}) => (
     
     <input name="text" type="text" className="form-control" placeholder="Поиск"  value={value} onChange={(event => setValue(event.target.value))} onKeyDown={(event => enterHandler(event.key, onEnter, value))} />
