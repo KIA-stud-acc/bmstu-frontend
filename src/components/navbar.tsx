@@ -15,10 +15,17 @@ function NavBar() {
             <Nav.Link href="/bmstu-frontend/vybory" className="li mx-3" style={{flex:"1"}}>Каталог</Nav.Link>
             <Nav.Link href="#link" className="li mx-3" style={{flex:"1"}}>Контакты</Nav.Link>
           </Nav>
+          <Nav className="justify-content-end" style={{ width: "100%" }}>
+            <Nav.Link href = "/bmstu-frontend/auth/reg" className="ml-auto">Регистрация</Nav.Link>
+            <Nav.Link href = "/bmstu-frontend/auth" className="ml-auto">Войти</Nav.Link>
+          </Nav>
         </Navbar.Collapse>
       </Container>
-</Navbar>
+    </Navbar>
+
   );
 }
 
 export default NavBar;
+
+

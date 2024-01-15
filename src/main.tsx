@@ -5,6 +5,8 @@ import VotingPage from './Voting.tsx'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './components/navbar'
+import RegistrationPage from './registrationPage.tsx'
+import AuthPage from './authPage.tsx'
 
 const router = createBrowserRouter(
   [
@@ -19,7 +21,16 @@ const router = createBrowserRouter(
   {
     path: '/bmstu-frontend/vybory/:id',
     element: <VotingPage/>
-  }]
+  },
+  {
+    path: '/bmstu-frontend/auth',
+    element: <AuthPage/>
+  },
+  {
+    path: '/bmstu-frontend/auth/reg',
+    element: <RegistrationPage/>
+  },
+]
 }
 ])
 
