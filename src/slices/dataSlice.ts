@@ -5,49 +5,58 @@ import { useSelector } from "react-redux";
 const dataSlice = createSlice({
     name: "data",
     initialState: {
-        Data: 
-            {
-                "isLogged":false,
-                "nameSearchQuery":'',
-                "votingDateToSearchQuery":"9999-12-01",
-                "votingDateFromSearchQuery":"0001-01-01",
-                "votingStatusSearchQuery":null
-            }
+        isLogged:false,
+        nameSearchQuery:'',
+        votingDateToSearchQuery:"9999-12-01",
+        votingDateFromSearchQuery:"0001-01-01",
+        votingStatusSearchQuery:null,
         
     },
     reducers: {
         setDateTo(state, {payload}) {  // изменяем состояние на полученные данные
-            state.Data.votingDateToSearchQuery = payload
+            state.votingDateToSearchQuery = payload
         },
         setDateFrom(state, {payload}) {  // изменяем состояние на полученные данные
-            state.Data.votingDateFromSearchQuery = payload
+            state.votingDateFromSearchQuery = payload
         },
         setStatus(state, {payload}) {  // изменяем состояние на полученные данные
-            state.Data.votingStatusSearchQuery = payload
+            state.votingStatusSearchQuery = payload
         },
         setNameSQ(state, {payload}) {  // изменяем состояние на полученные данные
-            state.Data.nameSearchQuery = payload
+            state.nameSearchQuery = payload
         },
         chLog(state) {  // суммируем цены выбранных товаров
-            state.Data.isLogged = state.Data.isLogged != true
+            state.isLogged = state.isLogged != true
         },
         delDateTo(state) {  // изменяем состояние на полученные данные
-            state.Data.votingDateToSearchQuery = '9999-12-01'
+            state.votingDateToSearchQuery = '9999-12-01'
         },
         delDateFrom(state) {  // изменяем состояние на полученные данные
-            state.Data.votingDateFromSearchQuery = '0001-01-01'
+            state.votingDateFromSearchQuery = '0001-01-01'
         },
         delStatus(state) {  // изменяем состояние на полученные данные
-            state.Data.votingStatusSearchQuery = null
+            state.votingStatusSearchQuery = null
         },
         delNameSQ(state) {  // изменяем состояние на полученные данные
-            state.Data.nameSearchQuery = ''
+            state.nameSearchQuery = ''
         },
     }
 })
 
-export const useData = () =>
-    useSelector((state:any) => state.ourData.Data)
+export const useIsLogged = () =>
+    useSelector((state:any) => state.ourData.isLogged)
+
+export const useNameSearchQuery = () =>
+    useSelector((state:any) => state.ourData.nameSearchQuery)
+
+export const useVotingDateToSearchQuery = () =>
+    useSelector((state:any) => state.ourData.votingDateToSearchQuery)
+
+export const useVotingDateFromSearchQuery = () =>
+    useSelector((state:any) => state.ourData.votingDateFromSearchQuery)
+
+export const useVotingStatusSearchQuery = () =>
+    useSelector((state:any) => state.ourData.votingStatusSearchQuery)
 
 export const {
     setDateTo: setDateToAction,

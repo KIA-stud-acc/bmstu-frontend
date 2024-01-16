@@ -3,7 +3,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './navbar.css'
 
+
 function NavBar() {
+
+
+
   return (
     <Navbar className="navbar-light navbar-expand" expand="lg">
       <Container fluid className="new flex-column" style={{width:"100%"}}>

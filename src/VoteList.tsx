@@ -5,14 +5,20 @@ import InputField from './components/InputField'
 import VotingCard from './components/VotingCard'
 
 import { Voting, searchInVoteList } from './modules/search-in-vote-list.ts'
+import {setNameSQAction, useNameSearchQuery} from "./slices/dataSlice";
+import {useDispatch} from "react-redux";
+
 
 
 
 const VoteList: FC = () => {
-  const [searchValue, setSearchValue] = useState('')
+  const dispatch = useDispatch()
+  const [searchValue, setSearchValue] = useState(useNameSearchQuery())
   const [voting, setVote] = useState<Voting[]>([])
-  const [searchQuery, setSearchQuery] = useState('')
-  
+  const searchQuery = useNameSearchQuery()
+ 
+
+
   const handleSearch = async () =>{
     const response = await searchInVoteList(searchValue)
     await setVote(response.voting)
@@ -38,7 +44,7 @@ useEffect(() => {
                 value={searchValue}
                 searchvalue={searchQuery}
                 setValue={(value) => setSearchValue(value)}
-                onEnter={(searchvalue) => setSearchQuery(searchvalue)}
+                onEnter={(searchvalue) => dispatch(setNameSQAction(searchvalue))}
             />
         <br/>
         <div className="card-deck">

@@ -12,6 +12,9 @@ function AuthPage() {
 
   const SubmitLog = async () =>{
     const response = await login(nameValue, passwordValue)
+    if (response.status == 'ok'){
+      
+    }
   }
 
 

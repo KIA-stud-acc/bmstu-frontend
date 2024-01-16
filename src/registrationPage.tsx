@@ -68,7 +68,7 @@ function RegistrationPage() {
               onChange={(event => setPasswordValue(event.target.value))}
             />
           </div>
-          <p>Поля отмеченные * обязательны для заполнения</p>
+          <p className="pReg">Поля отмеченные * обязательны для заполнения</p>
           <div className="d-grid gap-2 mt-3">
             <button className="btn btn-primary" onClick={()=>SubmitReg()}>
               Подтвердить
