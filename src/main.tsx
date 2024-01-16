@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './components/navbar'
 import RegistrationPage from './registrationPage.tsx'
 import AuthPage from './authPage.tsx'
+import store from "./store";
+import { Provider } from "react-redux";
+
 
 const router = createBrowserRouter(
   [
@@ -36,7 +39,9 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <NavBar/>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <NavBar/>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )
