@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import VoteList from './VoteList.tsx'
 import VotingPage from './Voting.tsx'
+import ApplList from './applList.tsx'
 import {BrowserRouter as HashRouter,Route,Routes} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './components/navbar'
@@ -45,6 +46,7 @@ const App: React.FC = () => {
       <NavBar/>
           <Routes>
               <Route path="/bmstu-frontend/" element={<VoteList/>}/>
+              <Route path="/bmstu-frontend/applications" element={<ApplList/>} />
               <Route path="/bmstu-frontend/vybory" element={<VoteList/>}/>
               <Route path="/bmstu-frontend/vybory/:id" element={<VotingPage/>} />
               <Route path="/bmstu-frontend/auth" element={<AuthPage/>}/>

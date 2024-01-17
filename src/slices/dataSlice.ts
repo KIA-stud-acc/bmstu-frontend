@@ -14,7 +14,7 @@ const dataSlice = createSlice({
         nameSearchQuery:'',
         votingDateToSearchQuery:"9999-12-01",
         votingDateFromSearchQuery:"0001-01-01",
-        votingStatusSearchQuery:null,
+        votingStatusSearchQuery:'Статус',
         
     },
     reducers: {
@@ -43,7 +43,7 @@ const dataSlice = createSlice({
             state.votingDateFromSearchQuery = '0001-01-01'
         },
         delStatus(state) {  
-            state.votingStatusSearchQuery = null
+            state.votingStatusSearchQuery = 'Статус'
         },
         delNameSQ(state) {  
             state.nameSearchQuery = ''
