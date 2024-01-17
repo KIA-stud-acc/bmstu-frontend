@@ -1,14 +1,16 @@
 import axios from 'axios'
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "csrftoken";
 
 
 export interface RegData {
     username: string
-    email: string
-    phone: string
+    email: string | null
+    phone: string | null
     password: string
 }
 
-export const registr = async (username:string, email='', phone='', password:string): Promise<RegData> =>{
+export const registr = async (username:string|null, email:string|null, phone:string|null, password:string|null): Promise<RegData> =>{
     return axios.post('../../api/user/', {
         username: username,
         email: email,

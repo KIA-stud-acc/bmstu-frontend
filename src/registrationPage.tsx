@@ -5,10 +5,10 @@ import { useState, useEffect} from 'react'
 
 
 function RegistrationPage() {
-  const [nameValue, setNameValue] = useState('')
-  const [phoneValue, setPhoneValue] = useState('')
-  const [passwordValue, setPasswordValue] = useState('')
-  const [emailValue, setEmailValue] = useState('')
+  const [nameValue, setNameValue] = useState<string | null>(null);
+  const [phoneValue, setPhoneValue] = useState<string | null>(null);
+  const [passwordValue, setPasswordValue] = useState<string | null>(null);
+  const [emailValue, setEmailValue] = useState<string | null>(null);
  
 
 

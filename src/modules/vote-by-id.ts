@@ -1,3 +1,4 @@
+import axios from "axios"
 import {mockVoteList} from "../model"
 
 
@@ -17,7 +18,7 @@ const filterVotingDataById = (votingArray: Voting[], idFilter: number): Voting |
 
 
 export const voteById = async (id = ''): Promise<Voting> =>{
-    return fetch(`../../api/vybory/${id}/`)
-        .then((response) => response.json())
+    return axios.get(`../../api/vybory/${id}/`)
+        .then((response) => response.data)
         .catch(()=> (filterVotingDataById(mockVoteList['voting'], Number(id))))
 }

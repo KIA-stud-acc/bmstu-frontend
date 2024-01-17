@@ -3,6 +3,7 @@ import './Voting.css'
 import { useParams } from 'react-router-dom';
 import { Voting, voteById } from './modules/vote-by-id.ts'
 import {Breadcrumb} from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,8 +25,8 @@ function VotingPage() {
   return ( 
     <>
     <Breadcrumb>
-        <Breadcrumb.Item href="#home">Главная</Breadcrumb.Item>
-        <Breadcrumb.Item href="../vybory">Каталог</Breadcrumb.Item>
+        <Breadcrumb.Item><Link to="#home">Главная</Link></Breadcrumb.Item>
+        <Breadcrumb.Item><Link to="/bmstu-frontend/vybory">Каталог</Link></Breadcrumb.Item>
         <Breadcrumb.Item active>
         {voting.name}
         </Breadcrumb.Item>
