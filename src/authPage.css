@@ -33,3 +33,9 @@
     font-weight: 600;
     color: rgb(34, 34, 34);
   }
+
+  .error-message{
+    font-size: 11px;
+    color: red;
+    margin-left: 0.5em;
+  }

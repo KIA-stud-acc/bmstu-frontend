@@ -2,10 +2,36 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './navbar.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { chLogAction, setUsernameAction, useIsLogged, useUsername, useVotingDateToSearchQuery } from '../slices/dataSlice';
+import { useEffect } from 'react';
+import { checkName } from '../modules/checkName';
+import { useDispatch } from 'react-redux';
+import { res, logout } from '../modules/logout'
+
+
 
 function NavBar() {
+  const username = useUsername()
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const authCheck = async () =>{
+    dispatch(setUsernameAction(await checkName()));
+}
+  
 
+const SubmitLogout = async () =>{
+  const response = await logout();
+  dispatch(chLogAction());
+  navigate("/bmstu-frontend/vybory");
+  }
+  
+
+
+  useEffect(() => {
+    authCheck()
+    }, []);
+  
 
 
   return (
@@ -20,8 +46,13 @@ function NavBar() {
             <Nav.Link as={Link} to="#link" className="li mx-3" style={{flex:"1"}}>Контакты</Nav.Link>
           </Nav>
           <Nav className="justify-content-end" style={{ width: "100%" }}>
-            <Nav.Link as={Link} to="/bmstu-frontend/auth/reg" className="ml-auto">Регистрация</Nav.Link>
-            <Nav.Link as={Link} to="/bmstu-frontend/auth" className="ml-auto">Войти</Nav.Link>
+            <>
+            {
+              useIsLogged()?(
+                (<><Nav.Link onClick={()=>SubmitLogout()} className="ml-auto">({username}) Выйти</Nav.Link></>)
+                ): <><Nav.Link as={Link} to="/bmstu-frontend/auth/reg" className="ml-auto">Регистрация</Nav.Link>
+                <Nav.Link as={Link} to="/bmstu-frontend/auth" className="ml-auto">Войти</Nav.Link></>
+            }</>
           </Nav>
         </Navbar.Collapse>
       </Container>

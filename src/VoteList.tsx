@@ -23,9 +23,7 @@ const VoteList: FC = () => {
     const response = await searchInVoteList(searchValue)
     await setVote(response.voting)
 }
-useEffect(()=>{
-  handleSearch();
-},[])
+
 
 
 useEffect(() => {

@@ -4,12 +4,14 @@ import { useParams } from 'react-router-dom';
 import { Voting, voteById } from './modules/vote-by-id.ts'
 import {Breadcrumb} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
 
 function VotingPage() {
     const { id } = useParams<{ id: string }>();
     const [voting, setVote] = useState<Voting>({id: 0, name: '', type: '', status: '', image_src: ''})
+    const dispatch = useDispatch();
     const handleSearch = async () =>{
         const response = await voteById(id)
         console.log(response)
@@ -17,7 +19,7 @@ function VotingPage() {
     }
     useEffect(()=>{
       handleSearch();
-    },[])
+    },[dispatch]);
     
     
 

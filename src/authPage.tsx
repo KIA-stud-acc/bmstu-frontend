@@ -1,19 +1,31 @@
 import './authPage.css'
 import { res, login } from './modules/login.ts'
 import { useState, useEffect} from 'react'
+import { chLogAction, setUsernameAction, useIsLogged } from './slices/dataSlice.ts'
+import { useNavigate } from 'react-router-dom'
+import { checkName } from './modules/checkName.ts'
+import { useDispatch } from 'react-redux'
 
 
 function AuthPage() {
   const [nameValue, setNameValue] = useState('')
   const [passwordValue, setPasswordValue] = useState('')
- 
-
+  const [error, setError] = useState(false)
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
 
 
   const SubmitLog = async () =>{
-    
     const response = await login(nameValue, passwordValue)
-    console.log(response);
+    if (response.status == "error"){
+      setError(true)
+    }
+    else {
+      
+      dispatch(chLogAction());
+      dispatch(setUsernameAction(await checkName()));
+      navigate("/bmstu-frontend/vybory");
+    }
     
   }
 
@@ -43,6 +55,7 @@ function AuthPage() {
               onChange={(event => setPasswordValue(event.target.value))}
             />
           </div>
+          {error && <div className="error-message">*Неверное имя пользователя или пароль</div>}
           <div className="d-grid gap-2 mt-3">
             <button  onClick={()=>SubmitLog()} className="btn btn-primary">
               Подтвердить

@@ -4,10 +4,12 @@ axios.defaults.xsrfCookieName = "csrftoken";
 
 
 export interface RegData {
-    username: string
+    status: string
+    username: string | null
     email: string | null
     phone: string | null
-    password: string
+    password: string | null
+    error:string
 }
 
 export const registr = async (username:string|null, email:string|null, phone:string|null, password:string|null): Promise<RegData> =>{

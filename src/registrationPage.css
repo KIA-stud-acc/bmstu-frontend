@@ -38,3 +38,9 @@
     font-size: 11px;
     color: lightgray;
   }
+
+  .error-message{
+    font-size: 11px;
+    color: red;
+    margin-left: 0.5em;
+  }

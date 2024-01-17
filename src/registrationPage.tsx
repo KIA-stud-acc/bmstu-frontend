@@ -1,6 +1,11 @@
 import './registrationPage.css'
 import { RegData, registr } from './modules/registration.ts'
 import { useState, useEffect} from 'react'
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { checkName } from './modules/checkName.ts';
+import { login } from './modules/login.ts';
+import { chLogAction, setUsernameAction } from './slices/dataSlice.ts';
 
 
 
@@ -9,12 +14,23 @@ function RegistrationPage() {
   const [phoneValue, setPhoneValue] = useState<string | null>(null);
   const [passwordValue, setPasswordValue] = useState<string | null>(null);
   const [emailValue, setEmailValue] = useState<string | null>(null);
- 
+  const [error, setError] = useState(false)
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
 
 
 
   const SubmitReg = async () =>{
     const response = await registr(nameValue, emailValue, phoneValue, passwordValue)
+    if (response.status == "error"){
+      setError(true)
+    }
+    else {
+      const response1 = await login(nameValue, passwordValue)
+      dispatch(chLogAction());
+      dispatch(setUsernameAction(await checkName()));
+      navigate("/bmstu-frontend/vybory");
+    }
   }
 
 
@@ -69,6 +85,7 @@ function RegistrationPage() {
             />
           </div>
           <p className="pReg">Поля отмеченные * обязательны для заполнения</p>
+          {error && <div className="error-message">*Имя пользователя, email или номер телефона уже заняты или не введены обязательные поля</div>}
           <div className="d-grid gap-2 mt-3">
             <button className="btn btn-primary" onClick={()=>SubmitReg()}>
               Подтвердить
