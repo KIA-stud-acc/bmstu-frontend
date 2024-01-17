@@ -14,7 +14,6 @@ function VotingPage() {
     const dispatch = useDispatch();
     const handleSearch = async () =>{
         const response = await voteById(id)
-        console.log(response)
         await setVote(response)
     }
     useEffect(()=>{

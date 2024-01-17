@@ -47,7 +47,7 @@ useEffect(() => {
         <br/>
         <div className="card-deck">
               {voting.map((item)=> (
-                      <VotingCard {...item} />
+                      VotingCard(item.id, item.name, item.image_src)
               ))}
         </div>
     </>

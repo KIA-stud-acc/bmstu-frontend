@@ -3,26 +3,31 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './navbar.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { chLogAction, setUsernameAction, useIsLogged, useUsername, useVotingDateToSearchQuery } from '../slices/dataSlice';
+import { chDraftExistAction, chLogAction, setUsernameAction, useDraftExist, useIsLogged, useUsername, useVotingDateToSearchQuery } from '../slices/dataSlice';
 import { useEffect } from 'react';
 import { checkName } from '../modules/checkName';
 import { useDispatch } from 'react-redux';
 import { res, logout } from '../modules/logout'
-
+import { searchInVoteList } from '../modules/search-in-vote-list';
+import Cookies from 'js-cookie';
 
 
 function NavBar() {
+  const draft = useDraftExist()
   const username = useUsername()
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const authCheck = async () =>{
     dispatch(setUsernameAction(await checkName()));
+    const prom = await searchInVoteList()
 }
   
 
 const SubmitLogout = async () =>{
   const response = await logout();
   dispatch(chLogAction());
+  Cookies.remove("draft_exist")
+  dispatch(chDraftExistAction(false))
   navigate("/bmstu-frontend/vybory");
   }
   
@@ -30,6 +35,7 @@ const SubmitLogout = async () =>{
 
   useEffect(() => {
     authCheck()
+    
     }, []);
   
 
@@ -50,7 +56,9 @@ const SubmitLogout = async () =>{
             <>
             {
               useIsLogged()?(
-                (<><Nav.Link onClick={()=>SubmitLogout()} className="ml-auto">({username}) Выйти</Nav.Link></>)
+                (<>{draft?<Nav.Link as={Link} to="/bmstu-frontend/applications/current" className="ml-auto">Черновик голосования</Nav.Link>:
+                <Nav.Link className="ml-auto">Черновик голосования</Nav.Link>}
+                <Nav.Link onClick={()=>SubmitLogout()} className="ml-auto">({username}) Выйти</Nav.Link></>)
                 ): <><Nav.Link as={Link} to="/bmstu-frontend/auth/reg" className="ml-auto">Регистрация</Nav.Link>
                 <Nav.Link as={Link} to="/bmstu-frontend/auth" className="ml-auto">Войти</Nav.Link></>
             }</>

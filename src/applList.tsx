@@ -137,7 +137,7 @@ function ApplList() {
         <tbody>
         {application.map((item)=> (
                       <><tr> 
-                        <td>{item.id}</td>
+                        <td><Link className='link' to={`/bmstu-frontend/applications/${item.id}`}>{item.id}</Link></td>
                         <td>{item.status}</td>
                         <td>{item.creator.username}</td>
                         <td>{item.date_of_creation}</td>

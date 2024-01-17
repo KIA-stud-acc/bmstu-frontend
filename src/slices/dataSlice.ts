@@ -15,6 +15,7 @@ const dataSlice = createSlice({
         votingDateToSearchQuery:"9999-12-01",
         votingDateFromSearchQuery:"0001-01-01",
         votingStatusSearchQuery:'Статус',
+        draftExist:Cookies.get("draft_exist")?true:false,
         
     },
     reducers: {
@@ -36,6 +37,9 @@ const dataSlice = createSlice({
         chLog(state) {  
             state.isLogged = !state.isLogged
         },
+        chDraftExist(state, {payload}){
+            state.draftExist = payload
+        },
         delDateTo(state) {  
             state.votingDateToSearchQuery = '9999-12-01'
         },
@@ -54,6 +58,9 @@ const dataSlice = createSlice({
 export const useIsLogged = () =>
     useSelector((state:any) => state.ourData.isLogged)
 
+export const useDraftExist = () =>
+    useSelector((state:any) => state.ourData.draftExist)
+
 export const useNameSearchQuery = () =>
     useSelector((state:any) => state.ourData.nameSearchQuery)
 
@@ -70,12 +77,15 @@ export const useUsername = () =>
     useSelector((state:any) => state.ourData.username)
 
 
+
+
 export const {
     setDateTo: setDateToAction,
     setDateFrom: setDateFromAction,
     setStatus: setStatusAction,
     setNameSQ: setNameSQAction,
     chLog: chLogAction,
+    chDraftExist: chDraftExistAction,
     delDateTo: delDateToAction,
     delDateFrom: delDateFromAction,
     delStatus: delStatusAction,

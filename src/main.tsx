@@ -10,7 +10,7 @@ import RegistrationPage from './registrationPage.tsx'
 import AuthPage from './authPage.tsx'
 import store from "./store";
 import { Provider } from "react-redux";
-
+import DraftAppl from './draftAppl.tsx'
 
 /*
 const router = createBrowserRouter(
@@ -47,6 +47,7 @@ const App: React.FC = () => {
           <Routes>
               <Route path="/bmstu-frontend/" element={<VoteList/>}/>
               <Route path="/bmstu-frontend/applications" element={<ApplList/>} />
+              <Route path="/bmstu-frontend/applications/:id" element={<DraftAppl/>} />
               <Route path="/bmstu-frontend/vybory" element={<VoteList/>}/>
               <Route path="/bmstu-frontend/vybory/:id" element={<VotingPage/>} />
               <Route path="/bmstu-frontend/auth" element={<AuthPage/>}/>

@@ -1,0 +1,15 @@
+.desc {
+    display: block;
+    width: 25em;
+}
+.fields{
+    height: 4em;
+}
+.form{
+    margin-left: 1em;
+}
+.field {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
