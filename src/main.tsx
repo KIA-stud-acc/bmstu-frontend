@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import VoteList from './VoteList.tsx'
 import VotingPage from './Voting.tsx'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import {BrowserRouter as HashRouter,Route,Routes} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './components/navbar'
 import RegistrationPage from './registrationPage.tsx'
@@ -11,7 +11,7 @@ import store from "./store";
 import { Provider } from "react-redux";
 
 
-
+/*
 const router = createBrowserRouter(
   [
   {
@@ -36,13 +36,30 @@ const router = createBrowserRouter(
   },
 ]
 }
-])
+])*/
+
+
+const App: React.FC = () => {
+  return (
+      <HashRouter>
+      <NavBar/>
+          <Routes>
+              <Route path="/bmstu-frontend/" element={<VoteList/>}/>
+              <Route path="/bmstu-frontend/vybory" element={<VoteList/>}/>
+              <Route path="/bmstu-frontend/vybory/:id" element={<VotingPage/>} />
+              <Route path="/bmstu-frontend/auth" element={<AuthPage/>}/>
+              <Route path="/bmstu-frontend/auth/reg" element={<RegistrationPage/>} />
+          </Routes>
+      </HashRouter>
+
+  );
+};
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <NavBar/>
-      <RouterProvider router={router} />
+      <App/>
     </Provider>
   </React.StrictMode>,
 )
