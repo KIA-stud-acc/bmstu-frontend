@@ -1,6 +1,10 @@
-.desc {
+.descr {
     display: block;
-    width: 25em;
+    width: 50em;
+    
+    word-wrap: break-word;
+    overflow-x:hidden;
+    
 }
 .fields{
     height: 4em;
@@ -12,4 +16,11 @@
     display: block;
     margin-bottom: 1em;
     margin-left: 1em;
+}
+.table {
+    margin-top:0.5em;
+}
+
+.error {
+    color: red;
 }

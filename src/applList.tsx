@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './applList.css'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {Breadcrumb, Button, Form} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -11,7 +11,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function ApplList() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     let dateFrom = useVotingDateFromSearchQuery()
     let dateTo = useVotingDateToSearchQuery()
     const [inputType, setInputType] = useState("text");
@@ -136,15 +137,15 @@ function ApplList() {
         </thead>
         <tbody>
         {application.map((item)=> (
-                      <><tr> 
+                      <><tr onClick={()=>navigate(`/bmstu-frontend/applications/${item.id}`)}> 
                         <td><Link className='link' to={`/bmstu-frontend/applications/${item.id}`}>{item.id}</Link></td>
                         <td>{item.status}</td>
-                        <td>{item.creator.username}</td>
+                        <td>{item.creator}</td>
                         <td>{item.date_of_creation}</td>
-                        <td>{item.date_of_formation}</td>
-                        <td>{item.date_of_completion}</td>
-                        <td>{item.description}</td>
-                        <td>{item.QuantityOfVotes}</td>
+                        <td>{item.date_of_formation || "-"}</td>
+                        <td>{item.date_of_completion || "-"}</td>
+                        <td><div className="desc">{item.description || "-"}</div></td>
+                        <td>{item.QuantityOfVotes || "-"}</td>
                       </tr></>
               ))}
           </tbody>

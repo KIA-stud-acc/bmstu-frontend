@@ -25,7 +25,7 @@ export interface Voting {
     type: string
     status: string
     image_src: string
-    percantage: number
+    percentage: number
 }
 
 

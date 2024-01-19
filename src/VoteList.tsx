@@ -43,6 +43,7 @@ useEffect(() => {
                 searchvalue={searchQuery}
                 setValue={(value) => setSearchValue(value)}
                 onEnter={(searchvalue) => dispatch(setNameSQAction(searchvalue))}
+                placeHolder="Поиск"
             />
         <br/>
         <div className="card-deck">

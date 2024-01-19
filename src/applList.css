@@ -17,3 +17,19 @@
 .clear{
     margin-left: 0.5em;
 }
+.desc{
+    width: 50em;
+    max-height: 10em;
+    word-wrap: break-word;
+    overflow-x:hidden;
+    display: block;
+}
+.table {
+    overflow: auto;
+    display: block;
+    table-layout: auto;
+    }
+    
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #c3d0f5;
+}
