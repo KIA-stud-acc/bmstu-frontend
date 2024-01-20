@@ -122,7 +122,8 @@ function ApplList() {
                 </div>
                 <Button onClick={()=>clearHandler()} className='clear'>Сбросить фильтры</Button>
         </div>
-    <Table className="table2 w-100" responsive="sm">
+    <div className="table2">
+    <Table className="w-100" responsive="sm">
         <thead>
           <tr>
             <th><div className='idField'>ID</div></th>
@@ -150,6 +151,7 @@ function ApplList() {
               ))}
           </tbody>
       </Table>
+      </div>
     </>
   )
 }

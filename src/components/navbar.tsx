@@ -59,7 +59,7 @@ const SubmitLogout = async () =>{
             {
               useIsLogged()?(
                 (<>{draft?<Nav.Link as={Link} to="/bmstu-frontend/applications/current" className="ml-auto rightnav">Черновик голосования</Nav.Link>:
-                <Nav.Link className="ml-auto">Черновик голосования</Nav.Link>}
+                <Nav.Link disabled className="ml-auto">Черновик голосования</Nav.Link>}
                 <Nav.Link onClick={()=>SubmitLogout()} className="ml-auto  rightnav">({username}) Выйти</Nav.Link></>)
                 ): <><Nav.Link as={Link} to="/bmstu-frontend/auth/reg" className="ml-auto rightnav">Регистрация</Nav.Link>
                 <Nav.Link as={Link} to="/bmstu-frontend/auth" className="ml-auto rightnav">Войти</Nav.Link></>

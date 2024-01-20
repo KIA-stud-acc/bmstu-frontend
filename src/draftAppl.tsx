@@ -119,10 +119,10 @@ function DraftAppl() {
         <thead>
           <tr>
             <th><div className='idField'>ID</div></th>
-            <th>Название</th>
-            <th>Тип</th>
+            <th style={{width:"20%"}}>Название</th>
+            <th style={{width:"25%"}}>Тип</th>
             <th>Процент голосов</th>
-            {(id=="current")&&<th>Удалить из голосования</th>}
+            {(id=="current")&&<th  style={{width:"28%"}}>Удалить из голосования</th>}
           </tr>
         </thead>
         <tbody>
