@@ -1,6 +1,27 @@
 .navbar {
     margin-bottom: 1rem;
-    background-color:rgb(228, 227, 227);
+    background: linear-gradient(to bottom left, #3862df, #567fe9);
     border-radius: 1rem;
     height: 6.5rem;
+    
+}
+.brandcss{
+    font-family: Lato ,Arial,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.nav-link, .navbar-brand {
+    color:white;
+    
+}
+.navbar-brand {
+    margin-top: 0.5em;
+}
+.rightnav{
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+.left{
+    height: 2.5em;
+    margin-bottom: 1em;
 }

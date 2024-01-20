@@ -96,27 +96,29 @@ function DraftAppl() {
         </Breadcrumb.Item>
     </Breadcrumb>
     <div className="fields">
+    <div className='nonTable'>
         <div className='field id'>id: {applic.Application.id}</div>
-        <div className='field status'>Статус: {applic.Application.status}</div>
+        <div className='field status'>статус: {applic.Application.status}</div>
         <div className='field creator'>Создатель: {applic.Application.creator?applic.Application.creator:'-'}</div>
         <div className='field date_of_creation'>Дата создания: {applic.Application.date_of_creation || "-"}</div>
         <div className='field date_of_formation'>Дата формирования: {applic.Application.date_of_formation || "-"}</div>
         <div className='field date_of_completion'>Дата завершения: {applic.Application.date_of_completion || "-"}</div>
         <div className="descr">
-        {id=="current"?<InputField
+        {id=="current"?<div className='field description'><InputField
                                 error={false}
                                 value={descrip}
                                 searchvalue={descrip}
                                 setValue={(value) => setDescrip(value)}
                                 onEnter={(value) => updateDescription(value, applic.Application.id+'')}
                                 placeHolder="Описание голосования"
-                            />:<div className='field description'>Описание голосования: {applic.Application.description || "-"}</div>}
-        
-        <Table className='table' responsive="sm">
+                            /></div>:<div className='field description'>Описание голосования: {applic.Application.description || "-"}</div>}
+        </div>
+        </div>
+        <div className='table1'>
+        <Table className='w-100' responsive="sm">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Статус</th>
+            <th><div className='idField'>ID</div></th>
             <th>Название</th>
             <th>Тип</th>
             <th>Процент голосов</th>
@@ -126,8 +128,7 @@ function DraftAppl() {
         <tbody>
         {applic.Voting.map((item)=> (
             <><tr> 
-            <td><Link className='link' to={`/bmstu-frontend/vybory/${item.id}`}>{item.id}</Link></td>
-            <td onClick={()=>navigate(`/bmstu-frontend/vybory/${item.id}`)}>{item.status}</td>
+            <td><Link className='link' to={`/bmstu-frontend/vybory/${item.id}`}><p className='idField'>{item.id}</p></Link></td>
             <td onClick={()=>navigate(`/bmstu-frontend/vybory/${item.id}`)}>{item.name}</td>
             <td onClick={()=>navigate(`/bmstu-frontend/vybory/${item.id}`)}>{item.type}</td>
             {id=="current"?<td><InputField
@@ -145,10 +146,10 @@ function DraftAppl() {
               ))}
           </tbody>
       </Table>
+      </div>
 
-
-        </div>
-        {(id=="current")&&<Button className='form' onClick={()=>formAppl()}>Сформировать</Button>}
+        
+        {(id=="current")&&<Button className='form1' onClick={()=>formAppl()}>Сформировать</Button>}
         </div>
     
     </>

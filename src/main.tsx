@@ -11,6 +11,7 @@ import AuthPage from './authPage.tsx'
 import store from "./store";
 import { Provider } from "react-redux";
 import DraftAppl from './draftAppl.tsx'
+import './main.css'
 
 /*
 const router = createBrowserRouter(
