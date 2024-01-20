@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import './InputField.css'
-import { Placeholder } from 'react-bootstrap'
 
 interface Props {
     value: any

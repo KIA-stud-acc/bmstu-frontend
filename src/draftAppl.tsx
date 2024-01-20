@@ -1,19 +1,15 @@
-import { SetStateAction, useEffect, useReducer, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './draftAppl.css'
 import { useNavigate, useParams } from 'react-router-dom';
-import {Breadcrumb, Button, Form} from 'react-bootstrap'
+import {Breadcrumb, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { applVote, application } from './modules/applications';
-import { chDraftExistAction, delDateFromAction, delDateToAction, delStatusAction, setDateFromAction, setDateToAction, setStatusAction, useDraftExist, useVotingDateFromSearchQuery, useVotingDateToSearchQuery, useVotingStatusSearchQuery } from './slices/dataSlice';
+import { chDraftExistAction} from './slices/dataSlice';
 import Table from 'react-bootstrap/Table';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import Voting from './Voting';
 import InputField from './components/InputField';
-import React from 'react';
 
 function DraftAppl() {
     const navigate = useNavigate();
@@ -102,13 +98,13 @@ function DraftAppl() {
     <div className="fields">
         <div className='field id'>id: {applic.Application.id}</div>
         <div className='field status'>Статус: {applic.Application.status}</div>
-        <div className='field creator'>Создатель: {applic.Application.creator?applic.Application.creator.username:'-'}</div>
+        <div className='field creator'>Создатель: {applic.Application.creator?applic.Application.creator:'-'}</div>
         <div className='field date_of_creation'>Дата создания: {applic.Application.date_of_creation || "-"}</div>
         <div className='field date_of_formation'>Дата формирования: {applic.Application.date_of_formation || "-"}</div>
         <div className='field date_of_completion'>Дата завершения: {applic.Application.date_of_completion || "-"}</div>
         <div className="descr">
         {id=="current"?<InputField
-                                
+                                error={false}
                                 value={descrip}
                                 searchvalue={descrip}
                                 setValue={(value) => setDescrip(value)}

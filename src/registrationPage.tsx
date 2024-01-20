@@ -1,6 +1,6 @@
 import './registrationPage.css'
-import { RegData, registr } from './modules/registration.ts'
-import { useState, useEffect} from 'react'
+import { registr } from './modules/registration.ts'
+import { useState} from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { checkName } from './modules/checkName.ts';
@@ -26,7 +26,7 @@ function RegistrationPage() {
       setError(true)
     }
     else {
-      const response1 = await login(nameValue, passwordValue)
+      await login(nameValue, passwordValue)
       dispatch(chLogAction());
       dispatch(setUsernameAction(await checkName()));
       navigate("/bmstu-frontend/vybory");

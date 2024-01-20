@@ -9,8 +9,8 @@ export interface userData {
 
 export interface appl {
     id: number
-    creator: userData |null
-    moderator: userData | null
+    creator: string |null
+    moderator: string | null
     status: string
     date_of_creation: string | null
     date_of_formation: string | null

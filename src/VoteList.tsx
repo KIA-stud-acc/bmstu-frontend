@@ -39,6 +39,7 @@ useEffect(() => {
       <Breadcrumb.Item active>Каталог</Breadcrumb.Item>
     </Breadcrumb>
       <InputField
+                error ={false}
                 value={searchValue}
                 searchvalue={searchQuery}
                 setValue={(value) => setSearchValue(value)}

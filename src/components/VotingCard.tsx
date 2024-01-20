@@ -1,4 +1,3 @@
-import { FC, JSXElementConstructor, ReactElement, ReactNode } from 'react'
 import { Card, Button } from 'react-bootstrap'
 import './VotingCard.css'
 import { Link } from 'react-router-dom';
@@ -7,14 +6,6 @@ import { useDispatch } from 'react-redux';
 import { chDraftExistAction } from '../slices/dataSlice';
 import Cookies from 'js-cookie';
 
-
-interface Props {
-    id: number
-    name: string
-    type: string
-    status: string
-    image_src: string
-}
 
 
 

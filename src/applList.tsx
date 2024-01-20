@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './applList.css'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {Breadcrumb, Button, Form} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';

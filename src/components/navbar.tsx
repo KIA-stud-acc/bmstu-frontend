@@ -3,11 +3,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './navbar.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { chDraftExistAction, chLogAction, setUsernameAction, useDraftExist, useIsLogged, useUsername, useVotingDateToSearchQuery } from '../slices/dataSlice';
+import { chDraftExistAction, chLogAction, setUsernameAction, useDraftExist, useIsLogged, useUsername } from '../slices/dataSlice';
 import { useEffect } from 'react';
 import { checkName } from '../modules/checkName';
 import { useDispatch } from 'react-redux';
-import { res, logout } from '../modules/logout'
+import { logout } from '../modules/logout'
 import { searchInVoteList } from '../modules/search-in-vote-list';
 import Cookies from 'js-cookie';
 
@@ -20,11 +20,12 @@ function NavBar() {
   const authCheck = async () =>{
     dispatch(setUsernameAction(await checkName()));
     const prom = await searchInVoteList()
+    prom
 }
   
 
 const SubmitLogout = async () =>{
-  const response = await logout();
+  await logout();
   dispatch(chLogAction());
   Cookies.remove("draft_exist")
   dispatch(chDraftExistAction(false))
