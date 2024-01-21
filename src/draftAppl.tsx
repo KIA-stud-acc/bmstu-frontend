@@ -98,7 +98,7 @@ function DraftAppl() {
     </Breadcrumb>
     <div className="fields">
     <div className='nonTable'>
-        {Boolean(applic.Application.id) && <div className='field id'>"id: {applic.Application.id}"</div>}
+        {Boolean(applic.Application.id) && <div className='field id'>id: {applic.Application.id}</div>}
         <div className='field status'>статус: {applic.Application.status?applic.Application.status:'черновик'}</div>
         <div className='field creator'>Создатель: {applic.Application.creator?applic.Application.creator:'Гость'}</div>
         <div className='field date_of_creation'>Дата создания: {applic.Application.date_of_creation? applic.Application.date_of_creation.slice(0,19).replace('T', " "): "-"}</div>
