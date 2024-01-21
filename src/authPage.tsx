@@ -23,7 +23,7 @@ function AuthPage() {
     else {
       
       dispatch(chLogAction(true));
-      dispatch(setUsernameAction(await checkName()));
+      dispatch(setUsernameAction((await checkName()).username));
       navigate("/bmstu-frontend/vybory");
     }
     

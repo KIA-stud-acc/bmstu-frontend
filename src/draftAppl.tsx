@@ -67,7 +67,7 @@ function DraftAppl() {
             description:value
         })
     }
-    const updatePercents = async (idAppl:string, idServ:string, value:string) =>{
+    const updatePercents = async (idServ:string, value:string) =>{
         if (isInteger(value)){
             if (Number(value)>=0 && Number(value)<100){
                 await axios.put(`../../api/applications/${idServ}/mm`,{
@@ -137,7 +137,7 @@ function DraftAppl() {
                                 value={percents.get(item.id).value}
                                 searchvalue={''}
                                 setValue={(value) => setPercents(new Map(percents.set(item.id,{value:value,error:false})))}
-                                onEnter={(value) => updatePercents(applic.Application.id+'', item.id+'', value)}
+                                onEnter={(value) => updatePercents(item.id+'', value)}
                                 placeHolder=""
                             /></td>:
                         <td>{item.percentage}</td>

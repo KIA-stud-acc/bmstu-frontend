@@ -27,7 +27,7 @@ function RegistrationPage() {
     }
     else {
       await login(nameValue, passwordValue)
-      dispatch(chLogAction());
+      dispatch(chLogAction(true));
       dispatch(setUsernameAction(await checkName()));
       navigate("/bmstu-frontend/vybory");
     }

@@ -9,8 +9,10 @@ const dataSlice = createSlice({
     name: "data",
     initialState: {
         isLogged:false,
+        isModer:false,
         basket:false,
         username:'',
+        usernameSearchQuery:'',
         nameSearchQuery:'',
         votingDateToSearchQuery:"9999-12-01",
         votingDateFromSearchQuery:"0001-01-01",
@@ -18,6 +20,9 @@ const dataSlice = createSlice({
         
     },
     reducers: {
+        setUsernameSearchQuery(state, {payload}) {  
+            state.usernameSearchQuery = payload
+        },
         setUsername(state, {payload}) {  
             state.username = payload
         },
@@ -35,6 +40,9 @@ const dataSlice = createSlice({
         },
         chLog(state, {payload}) {  
             state.isLogged = payload
+        },
+        chModer(state, {payload}) {  
+            state.isModer = payload
         },
         chBasket(state, {payload}) {  
             state.basket = payload
@@ -60,9 +68,15 @@ export const useIsLogged = () =>
 export const useBasket = () =>
     useSelector((state:any) => state.ourData.basket)
 
+export const useIsModer = () =>
+    useSelector((state:any) => state.ourData.isModer)
 
 export const useNameSearchQuery = () =>
     useSelector((state:any) => state.ourData.nameSearchQuery)
+
+export const useUsernameSearchQuery = () =>
+    useSelector((state:any) => state.ourData.usernameSearchQuery)
+
 
 export const useVotingDateToSearchQuery = () =>
     useSelector((state:any) => state.ourData.votingDateToSearchQuery)
@@ -91,6 +105,8 @@ export const {
     delNameSQ: delNameSQAction,
     setUsername: setUsernameAction,
     chBasket: chBasketAction,
+    chModer: chModerAction,
+    setUsernameSearchQuery: setUsernameSQAction,
 } = dataSlice.actions
 
 

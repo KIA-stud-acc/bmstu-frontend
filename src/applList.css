@@ -41,3 +41,23 @@
 .idField {
     margin-left:0.5em;
 } 
+.usernameSearch{
+    width:12em;
+    display: inline-block;
+    margin-left: 0.5em;
+}
+.approval{
+    text-align: center;
+}
+.approvalBtn{
+    width: 2.7em;
+    height: 2.7em;
+    background: #ffffff !important;
+    text-align: center;
+}
+.btnConf{
+    border-radius: 0 1em 1em 0;
+}
+.btnRej{
+    border-radius: 1em 0 0 1em;
+}
