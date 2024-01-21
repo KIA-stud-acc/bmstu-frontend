@@ -100,9 +100,9 @@ function DraftAppl() {
         <div className='field id'>id: {applic.Application.id}</div>
         <div className='field status'>статус: {applic.Application.status}</div>
         <div className='field creator'>Создатель: {applic.Application.creator?applic.Application.creator:'-'}</div>
-        <div className='field date_of_creation'>Дата создания: {applic.Application.date_of_creation || "-"}</div>
-        <div className='field date_of_formation'>Дата формирования: {applic.Application.date_of_formation || "-"}</div>
-        <div className='field date_of_completion'>Дата завершения: {applic.Application.date_of_completion || "-"}</div>
+        <div className='field date_of_creation'>Дата создания: {applic.Application.date_of_creation? applic.Application.date_of_creation.slice(0,19).replace('T', " "): "-"}</div>
+        <div className='field date_of_formation'>Дата формирования: {applic.Application.date_of_formation? applic.Application.date_of_formation.slice(0,19).replace('T', " "): "-"}</div>
+        <div className='field date_of_completion'>Дата завершения: {applic.Application.date_of_completion? applic.Application.date_of_completion.slice(0,19).replace('T', " "): "-"}</div>
         <div className="descr">
         {id=="current"?<div className='field description'><InputField
                                 error={false}
