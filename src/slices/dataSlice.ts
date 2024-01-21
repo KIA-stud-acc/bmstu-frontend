@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { useSelector } from "react-redux";
-import Cookies from 'js-cookie';
 
 
 
@@ -34,8 +33,8 @@ const dataSlice = createSlice({
         setNameSQ(state, {payload}) {  
             state.nameSearchQuery = payload
         },
-        chLog(state) {  
-            state.isLogged = !state.isLogged
+        chLog(state, {payload}) {  
+            state.isLogged = payload
         },
         chBasket(state, {payload}) {  
             state.basket = payload

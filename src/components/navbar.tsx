@@ -23,7 +23,7 @@ function NavBar() {
     dispatch(setUsernameAction(name));
     if (name != ''){
       console.log("sdfsdgg")
-      dispatch(chLogAction());
+      dispatch(chLogAction(true));
     }
     if (bas.Voting.length > 0){
       dispatch(chBasketAction(true));
@@ -35,7 +35,7 @@ function NavBar() {
 
 const SubmitLogout = async () =>{
   await logout();
-  dispatch(chLogAction());
+  dispatch(chLogAction(false));
   dispatch(chBasketAction(false));
   Cookies.remove("session_id")
   navigate("/bmstu-frontend/vybory");
