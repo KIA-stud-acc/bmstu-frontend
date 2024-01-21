@@ -3,21 +3,19 @@ import './draftAppl.css'
 import { useNavigate, useParams } from 'react-router-dom';
 import {Breadcrumb, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { applVote, application } from './modules/applications';
-import { chDraftExistAction} from './slices/dataSlice';
 import Table from 'react-bootstrap/Table';
 import axios from 'axios';
-import Cookies from 'js-cookie';
 import InputField from './components/InputField';
+import { useDispatch } from 'react-redux';
+import { chBasketAction, useIsLogged } from './slices/dataSlice';
 
 function DraftAppl() {
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const dispatch = useDispatch()
     const [descrip, setDescrip] = useState('')
-
-
+    const isLogged = useIsLogged()
+    const dispatch = useDispatch()
     const [percents, setPercents] = useState(new Map());
 
     const [applic, setApplication] = useState<applVote>({Application:{id:0, creator:null, moderator:null, status:'',
@@ -26,9 +24,8 @@ function DraftAppl() {
     const getAppl = async () =>{
         const response = await application(id)
         if (response.Voting.length == 0){
-            Cookies.remove("draft_exist")
-            dispatch(chDraftExistAction(false))
             navigate("/bmstu-frontend/vybory");
+            dispatch(chBasketAction(false));
         }
 
         setDescrip(response.Application.description || "")
@@ -41,16 +38,20 @@ function DraftAppl() {
     
     
     
-    const delFromApplHandler = async (Appl:string, Serv:string) =>{
-        await axios.delete(`../../api/applications/${Appl}/${Serv}/`)
+    const delFromApplHandler = async (Serv:string) =>{
+        await axios.delete(`../../api/applications/${Serv}/mm`)
         getAppl();
         
     }
     const formAppl = async () =>{
-        await axios.put(`../../api/applications/form`)
-        Cookies.remove("draft_exist")
-        dispatch(chDraftExistAction(false))
-        navigate("/bmstu-frontend/vybory");
+        if (isLogged){
+            await axios.put(`../../api/applications/form`)
+            dispatch(chBasketAction(false));
+            navigate("/bmstu-frontend/vybory");
+        }
+        else{
+            navigate("/bmstu-frontend/auth");
+        }
         
     }
 
@@ -69,7 +70,7 @@ function DraftAppl() {
     const updatePercents = async (idAppl:string, idServ:string, value:string) =>{
         if (isInteger(value)){
             if (Number(value)>=0 && Number(value)<100){
-                await axios.put(`../../api/applications/${idAppl}/${idServ}/`,{
+                await axios.put(`../../api/applications/${idServ}/mm`,{
                     percent:Number(value)
                 })
             }
@@ -97,9 +98,9 @@ function DraftAppl() {
     </Breadcrumb>
     <div className="fields">
     <div className='nonTable'>
-        <div className='field id'>id: {applic.Application.id}</div>
-        <div className='field status'>статус: {applic.Application.status}</div>
-        <div className='field creator'>Создатель: {applic.Application.creator?applic.Application.creator:'-'}</div>
+        {Boolean(applic.Application.id) && <div className='field id'>"id: {applic.Application.id}"</div>}
+        <div className='field status'>статус: {applic.Application.status?applic.Application.status:'черновик'}</div>
+        <div className='field creator'>Создатель: {applic.Application.creator?applic.Application.creator:'Гость'}</div>
         <div className='field date_of_creation'>Дата создания: {applic.Application.date_of_creation? applic.Application.date_of_creation.slice(0,19).replace('T', " "): "-"}</div>
         <div className='field date_of_formation'>Дата формирования: {applic.Application.date_of_formation? applic.Application.date_of_formation.slice(0,19).replace('T', " "): "-"}</div>
         <div className='field date_of_completion'>Дата завершения: {applic.Application.date_of_completion? applic.Application.date_of_completion.slice(0,19).replace('T', " "): "-"}</div>
@@ -141,7 +142,7 @@ function DraftAppl() {
                             /></td>:
                         <td>{item.percentage}</td>
                         }
-                         {(id=="current")&&<td><Button onClick={()=>delFromApplHandler(applic.Application.id+'', item.id+'')} className='delFromAppl'>Удалить из голосования</Button></td>}
+                         {(id=="current")&&<td><Button onClick={()=>delFromApplHandler(item.id+'')} className='delFromAppl'>Удалить из голосования</Button></td>}
                       </tr></>
               ))}
           </tbody>

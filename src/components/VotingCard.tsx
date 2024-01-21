@@ -3,19 +3,18 @@ import './VotingCard.css'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { chDraftExistAction } from '../slices/dataSlice';
-import Cookies from 'js-cookie';
-
+import { chBasketAction } from '../slices/dataSlice';
 
 
 
 
 function VotingCard( id: number, name: string, image_src: any ){
+
     const dispatch = useDispatch()
+
     const addHandler = async (id:number) =>{
-        dispatch(chDraftExistAction(true))
-        Cookies.set("draft_exist", "1")
         axios.post(`../../api/vybory/${id}/addToAppl`)
+        dispatch(chBasketAction(true));
     }
 
     return(

@@ -3,22 +3,31 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './navbar.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { chDraftExistAction, chLogAction, setUsernameAction, useDraftExist, useIsLogged, useUsername } from '../slices/dataSlice';
+import { chBasketAction, chLogAction, setUsernameAction, useBasket, useIsLogged, useUsername } from '../slices/dataSlice';
 import { useEffect } from 'react';
 import { checkName } from '../modules/checkName';
 import { useDispatch } from 'react-redux';
 import { logout } from '../modules/logout'
 import { searchInVoteList } from '../modules/search-in-vote-list';
 import Cookies from 'js-cookie';
+import { application } from '../modules/applications';
 
 
 function NavBar() {
-  const draft = useDraftExist()
   const username = useUsername()
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const authCheck = async () =>{
-    dispatch(setUsernameAction(await checkName()));
+    const name = await checkName()
+    const bas = await application("current")
+    dispatch(setUsernameAction(name));
+    if (name != ''){
+      console.log("sdfsdgg")
+      dispatch(chLogAction());
+    }
+    if (bas.Voting.length > 0){
+      dispatch(chBasketAction(true));
+    }
     const prom = await searchInVoteList()
     prom
 }
@@ -27,8 +36,8 @@ function NavBar() {
 const SubmitLogout = async () =>{
   await logout();
   dispatch(chLogAction());
-  Cookies.remove("draft_exist")
-  dispatch(chDraftExistAction(false))
+  dispatch(chBasketAction(false));
+  Cookies.remove("session_id")
   navigate("/bmstu-frontend/vybory");
   }
   
@@ -55,11 +64,11 @@ const SubmitLogout = async () =>{
           </Nav>
           <Nav className="d-flex me-2">
             <>
-            
+            {useBasket()?<Nav.Link as={Link} to="/bmstu-frontend/applications/current" className="ml-auto rightnav">Черновик голосования</Nav.Link>:
+                <Nav.Link disabled className="ml-auto">Черновик голосования</Nav.Link>}
             {
               useIsLogged()?(
-                (<>{draft?<Nav.Link as={Link} to="/bmstu-frontend/applications/current" className="ml-auto rightnav">Черновик голосования</Nav.Link>:
-                <Nav.Link disabled className="ml-auto">Черновик голосования</Nav.Link>}
+                (<>
                 <Nav.Link onClick={()=>SubmitLogout()} className="ml-auto  rightnav">({username}) Выйти</Nav.Link></>)
                 ): <><Nav.Link as={Link} to="/bmstu-frontend/auth/reg" className="ml-auto rightnav">Регистрация</Nav.Link>
                 <Nav.Link as={Link} to="/bmstu-frontend/auth" className="ml-auto rightnav">Войти</Nav.Link></>

@@ -9,13 +9,13 @@ import Cookies from 'js-cookie';
 const dataSlice = createSlice({
     name: "data",
     initialState: {
-        isLogged:Cookies.get("session_id")?true:false,
+        isLogged:false,
+        basket:false,
         username:'',
         nameSearchQuery:'',
         votingDateToSearchQuery:"9999-12-01",
         votingDateFromSearchQuery:"0001-01-01",
         votingStatusSearchQuery:'Статус',
-        draftExist:Cookies.get("draft_exist")?true:false,
         
     },
     reducers: {
@@ -37,8 +37,8 @@ const dataSlice = createSlice({
         chLog(state) {  
             state.isLogged = !state.isLogged
         },
-        chDraftExist(state, {payload}){
-            state.draftExist = payload
+        chBasket(state, {payload}) {  
+            state.basket = payload
         },
         delDateTo(state) {  
             state.votingDateToSearchQuery = '9999-12-01'
@@ -58,8 +58,9 @@ const dataSlice = createSlice({
 export const useIsLogged = () =>
     useSelector((state:any) => state.ourData.isLogged)
 
-export const useDraftExist = () =>
-    useSelector((state:any) => state.ourData.draftExist)
+export const useBasket = () =>
+    useSelector((state:any) => state.ourData.basket)
+
 
 export const useNameSearchQuery = () =>
     useSelector((state:any) => state.ourData.nameSearchQuery)
@@ -85,12 +86,12 @@ export const {
     setStatus: setStatusAction,
     setNameSQ: setNameSQAction,
     chLog: chLogAction,
-    chDraftExist: chDraftExistAction,
     delDateTo: delDateToAction,
     delDateFrom: delDateFromAction,
     delStatus: delStatusAction,
     delNameSQ: delNameSQAction,
     setUsername: setUsernameAction,
+    chBasket: chBasketAction,
 } = dataSlice.actions
 
 
