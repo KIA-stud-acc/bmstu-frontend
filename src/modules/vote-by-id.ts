@@ -18,7 +18,7 @@ const filterVotingDataById = (votingArray: Voting[], idFilter: number): Voting |
 
 
 export const voteById = async (id = ''): Promise<Voting> =>{
-    return axios.get(`../../api/vybory/${id}/`)
+    return axios.get(`../../../api/vybory/${id}/`)
         .then((response) => response.data)
         .catch(()=> (filterVotingDataById(mockVoteList['voting'], Number(id))))
 }

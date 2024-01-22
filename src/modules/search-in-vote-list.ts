@@ -22,7 +22,7 @@ const filterVotingData = (votingArray: Voting[], nameFilter: string): Voting[] =
 
 
 export const searchInVoteList = async (text=''): Promise<VoteList> =>{
-    return axios.get(`../api/vybory/?text=${text}`)
+    return axios.get(`../../api/vybory/?text=${text}`)
         .then((response) => response.data)
         .catch(()=> ({voting:filterVotingData(mockVoteList['voting'], text),draftID:0}))
 }

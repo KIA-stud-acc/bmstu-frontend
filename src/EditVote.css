@@ -1,0 +1,43 @@
+
+.page{
+    height: 4em;
+    width: 50em;
+}
+.form1{
+    margin-top: 1em;
+    margin-right: 1em;
+}
+.field {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.error {
+    color: red;
+}
+.idField {
+    margin-left:0.5em;
+} 
+.voteFields{
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem -1.5rem #959ca7;
+    padding-top: 0.5em;
+    background: white;
+}
+.del{
+    background: #ff4949 !important;
+    border-color: #ff4949!important;
+}
+.chImage{
+    overflow-x:hidden;
+}
+.image{
+    width:4em;
+    height:4em;
+}
+.error-message1{
+    font-size: 0.9em;
+    color: red;
+    margin-left: 0.5em;
+  }

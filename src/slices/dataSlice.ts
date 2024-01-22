@@ -14,6 +14,7 @@ const dataSlice = createSlice({
         username:'',
         usernameSearchQuery:'',
         nameSearchQuery:'',
+        nameSearchQueryModer:'',
         votingDateToSearchQuery:"9999-12-01",
         votingDateFromSearchQuery:"0001-01-01",
         votingStatusSearchQuery:'Статус',
@@ -37,6 +38,9 @@ const dataSlice = createSlice({
         },
         setNameSQ(state, {payload}) {  
             state.nameSearchQuery = payload
+        },
+        setNameSQModer(state, {payload}) {  
+            state.nameSearchQueryModer = payload
         },
         chLog(state, {payload}) {  
             state.isLogged = payload
@@ -74,6 +78,9 @@ export const useIsModer = () =>
 export const useNameSearchQuery = () =>
     useSelector((state:any) => state.ourData.nameSearchQuery)
 
+export const useNameSearchQueryModer = () =>
+    useSelector((state:any) => state.ourData.nameSearchQueryModer)
+
 export const useUsernameSearchQuery = () =>
     useSelector((state:any) => state.ourData.usernameSearchQuery)
 
@@ -107,6 +114,7 @@ export const {
     chBasket: chBasketAction,
     chModer: chModerAction,
     setUsernameSearchQuery: setUsernameSQAction,
+    setNameSQModer: setNameSQModerAction,
 } = dataSlice.actions
 
 

@@ -12,6 +12,8 @@ import store from "./store";
 import { Provider } from "react-redux";
 import DraftAppl from './draftAppl.tsx'
 import './main.css'
+import ModerVoteList from './ModerVoteList.tsx'
+import EditVote from './EditVote.tsx'
 
 /*
 const router = createBrowserRouter(
@@ -53,6 +55,8 @@ const App: React.FC = () => {
               <Route path="/bmstu-frontend/vybory/:id" element={<VotingPage/>} />
               <Route path="/bmstu-frontend/auth" element={<AuthPage/>}/>
               <Route path="/bmstu-frontend/auth/reg" element={<RegistrationPage/>} />
+              <Route path="/bmstu-frontend/moder/vybory" element={<ModerVoteList/>}/>
+              <Route path="/bmstu-frontend/moder/vybory/:id" element={<EditVote/>}/>
           </Routes>
       </HashRouter>
 

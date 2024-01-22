@@ -66,7 +66,7 @@ const SubmitLogout = async () =>{
             <Nav.Link  as={Link} to="/bmstu-frontend/vybory" className="li mx-3 left" style={{flex:"1"}}>Каталог</Nav.Link>
             <Nav.Link as={Link} to="#link" className="li mx-3 left" style={{flex:"1"}}>Контакты</Nav.Link>
             {useIsLogged() && <><Nav.Link as={Link} to="/bmstu-frontend/applications" className="li mx-3 left" style={{flex:"1"}}>Голосования</Nav.Link></>}
-            {useIsModer() && <><Nav.Link as={Link} to="#" className="li mx-3 left">Редактирование названий</Nav.Link></>}
+            {useIsModer() && <><Nav.Link as={Link} to="/bmstu-frontend/moder/vybory" className="li mx-3 left">Редактирование названий</Nav.Link></>}
           </Nav>
           <Nav className="d-flex me-2">
             <>

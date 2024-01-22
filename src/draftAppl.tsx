@@ -27,13 +27,17 @@ function DraftAppl() {
             navigate("/bmstu-frontend/vybory");
             dispatch(chBasketAction(false));
         }
-
-        setDescrip(response.Application.description || "")
+            
+        
         response.Voting.map((item)=>setPercents(new Map(percents.set(item.id,{value:item.percentage,error:false}))))
         await setApplication(response)
+        return response.Application.description || ""
     }
     useEffect(() => {
-        getAppl();
+        const res = async()=>{ 
+            setDescrip(await getAppl())
+        }
+        res()
         }, []);
     
     
@@ -69,7 +73,7 @@ function DraftAppl() {
     }
     const updatePercents = async (idServ:string, value:string) =>{
         if (isInteger(value)){
-            if (Number(value)>=0 && Number(value)<100){
+            if (Number(value)>=0 && Number(value)<=100){
                 await axios.put(`../../api/applications/${idServ}/mm`,{
                     percent:Number(value)
                 })
