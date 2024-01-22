@@ -49,9 +49,12 @@ function DraftAppl() {
     }
     const formAppl = async () =>{
         if (isLogged){
-            await axios.put(`../../api/applications/form`)
+            const res = await axios.put(`../../api/applications/form`)
             dispatch(chBasketAction(false));
             navigate("/bmstu-frontend/vybory");
+            axios.post('../../async/calculate_votes', {
+                id: res.data.id
+              })
         }
         else{
             navigate("/bmstu-frontend/auth");
@@ -127,6 +130,7 @@ function DraftAppl() {
             <th style={{width:"20%"}}>Название</th>
             <th style={{width:"25%"}}>Тип</th>
             <th>Процент голосов</th>
+            <th>Статус</th>
             {(id=="current")&&<th  style={{width:"28%"}}>Удалить из голосования</th>}
           </tr>
         </thead>
@@ -144,8 +148,9 @@ function DraftAppl() {
                                 onEnter={(value) => updatePercents(item.id+'', value)}
                                 placeHolder=""
                             /></td>:
-                        <td>{item.percentage}</td>
+                        <td onClick={()=>navigate(`/bmstu-frontend/vybory/${item.id}`)}>{item.percentage}</td>
                         }
+                        <td onClick={()=>navigate(`/bmstu-frontend/vybory/${item.id}`)}>{item.status}</td>
                          {(id=="current")&&<td><Button onClick={()=>delFromApplHandler(item.id+'')} className='delFromAppl'>Удалить из голосования</Button></td>}
                       </tr></>
               ))}
