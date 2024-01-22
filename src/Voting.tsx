@@ -32,11 +32,12 @@ function VotingPage() {
         {voting.name}
         </Breadcrumb.Item>
     </Breadcrumb>
-    <h2>{voting.name}</h2>
+    <h2>{voting.name}{voting.status=="удалён"&&<p style={{color:"red"}}>(УДАЛЕНА)</p>}</h2>
 <br/><hr/><br/>
 <img className="imgVoting" src =  {voting.image_src || 'https://dostavka.phali-hinkali.ru/murino/api2/images/placeholder_1000x.jpg'} />
 <br/>
 <p className = "pVoting"> {voting.type} </p>
+
     </>
   )
 }

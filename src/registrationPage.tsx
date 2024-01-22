@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { checkName } from './modules/checkName.ts';
 import { login } from './modules/login.ts';
-import { chLogAction, setUsernameAction } from './slices/dataSlice.ts';
+import { chLogAction, chModerAction, setUsernameAction } from './slices/dataSlice.ts';
 
 
 
@@ -28,7 +28,9 @@ function RegistrationPage() {
     else {
       await login(nameValue, passwordValue)
       dispatch(chLogAction(true));
-      dispatch(setUsernameAction(await checkName()));
+      const res = await checkName();
+      dispatch(setUsernameAction(res.username));
+      dispatch(chModerAction(res.is_staff));
       navigate("/bmstu-frontend/vybory");
     }
   }
