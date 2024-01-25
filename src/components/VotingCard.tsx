@@ -19,7 +19,9 @@ function VotingCard( id: number, name: string, image_src: any ){
 
     return(
     <Card className = "d-inline-block">
-        <Card.Img className="card-img-top" src={image_src || 'https://dostavka.phali-hinkali.ru/murino/api2/images/placeholder_1000x.jpg'} alt = {name} />
+        <div className='cardimg'>
+        <img className="card-img-top" src={image_src || 'https://dostavka.phali-hinkali.ru/murino/api2/images/placeholder_1000x.jpg'} alt = {name} />
+        </div>
         <Card.Body>                
             <div className="card-title">
                 <Card.Title>{name}</Card.Title>

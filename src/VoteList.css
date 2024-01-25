@@ -7,3 +7,10 @@ body {
   padding-right: 1.5rem;
   padding-top: 1rem;
 }
+.card-deck{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}

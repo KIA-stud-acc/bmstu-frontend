@@ -107,14 +107,15 @@ function ApplList() {
         </Breadcrumb.Item>
     </Breadcrumb>
     <div className="filters">
-    <DropdownButton id="dropdown-basic-button status" title={useVotingStatusSearchQuery()}>
+      <div  className='filter'>
+    <DropdownButton id="dropdown-basic-button status" style={{width:"100%"}} title={useVotingStatusSearchQuery()}>
       <Dropdown.Item onClick={()=>statusHandler("сформирован")}>Сформирован</Dropdown.Item>
       <Dropdown.Item onClick={()=>statusHandler("отклонён")}>Отклонён</Dropdown.Item>
       <Dropdown.Item onClick={()=>statusHandler("завершён")}>Завершён</Dropdown.Item>
     </DropdownButton>
-    
-                <div className="dateFrom">
-                <Form>
+    </div>
+                
+                <Form className='filter'>
                 {(useVotingDateFromSearchQuery()!='0001-01-01')?
                     <Form.Control
                     type={inputTypeF}
@@ -133,9 +134,7 @@ function ApplList() {
                     onChange={(e) => dateFromHandler(e.target.value)}
                     />}
                 </Form>
-                </div>
-                <div className="dateTo">
-                <Form>
+                <Form className='filter'>
                 {(useVotingDateToSearchQuery()!='9999-12-01')?
                     <Form.Control
                     type={inputType}
@@ -154,8 +153,7 @@ function ApplList() {
                     onChange={(e) => dateToHandler(e.target.value)}
                     />}
                 </Form>
-                </div>
-                {isModer &&<div className='usernameSearch'>
+                {isModer &&<div  className='filter'>
                 <InputField
                 error ={false}
                 value={searchValue}
@@ -165,7 +163,7 @@ function ApplList() {
                 placeHolder="Создатель"
             />
                 </div>}
-                <Button onClick={()=>clearHandler()} className='clear'>Сбросить фильтры</Button>
+                <Button onClick={()=>clearHandler()} className='clear filter'>Сбросить фильтры</Button>
         </div>
     <div className="table2">
     <Table className="w-100" responsive="sm">

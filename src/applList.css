@@ -1,22 +1,14 @@
-.dateFrom {
-    display: inline-block;
-    width: 10em;
-    margin-left: 0.5em;
-}
-.dateTo {
-    display: inline-block;
-    width: 10em;
-    margin-left: 0.5em;
-}
-.dropdown {
-    display: inline-block;
-}
+
 .filters{
-    height: 4em;
+    display: flex;
+    white-space: nowrap;
+    margin-bottom:1em;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:10px;
 }
-.clear{
-    margin-left: 0.5em;
-}
+
 .desc{
     
     word-wrap: break-word;
@@ -42,11 +34,6 @@
 .idField {
     margin-left:0.5em;
 } 
-.usernameSearch{
-    width:12em;
-    display: inline-block;
-    margin-left: 0.5em;
-}
 .approval{
     text-align: center;
 }
@@ -61,4 +48,12 @@
 }
 .btnRej{
     border-radius: 1em 0 0 1em;
+}
+.filter{
+    position: relative;
+    flex: 1 1 15rem;
+    display: flex;
+}
+.dropdown-toggle{
+    width: 100%;
 }
