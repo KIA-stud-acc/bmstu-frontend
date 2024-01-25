@@ -26,7 +26,7 @@ function VotingPage() {
   return ( 
     <>
     <Breadcrumb>
-        <Breadcrumb.Item><Link to="#home">Главная</Link></Breadcrumb.Item>
+        <Breadcrumb.Item><Link to="/bmstu-frontend/">Главная</Link></Breadcrumb.Item>
         <Breadcrumb.Item><Link to="/bmstu-frontend/vybory">Каталог</Link></Breadcrumb.Item>
         <Breadcrumb.Item active>
         {voting.name}

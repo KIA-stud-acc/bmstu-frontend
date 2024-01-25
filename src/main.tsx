@@ -14,6 +14,7 @@ import DraftAppl from './draftAppl.tsx'
 import './main.css'
 import ModerVoteList from './ModerVoteList.tsx'
 import EditVote from './EditVote.tsx'
+import { Breadcrumb } from 'react-bootstrap'
 
 /*
 const router = createBrowserRouter(
@@ -48,7 +49,11 @@ const App: React.FC = () => {
       <HashRouter>
       <NavBar/>
           <Routes>
-              <Route path="/bmstu-frontend/" element={<VoteList/>}/>
+              <Route path="/bmstu-frontend/" element={<Breadcrumb>
+        <Breadcrumb.Item active>
+        Главная
+        </Breadcrumb.Item>
+    </Breadcrumb>}/>
               <Route path="/bmstu-frontend/applications" element={<ApplList/>} />
               <Route path="/bmstu-frontend/applications/:id" element={<DraftAppl/>} />
               <Route path="/bmstu-frontend/vybory" element={<VoteList/>}/>

@@ -97,7 +97,7 @@ function DraftAppl() {
   return ( 
     <>
     <Breadcrumb>
-        <Breadcrumb.Item><Link to="#home">Главная</Link></Breadcrumb.Item>
+        <Breadcrumb.Item><Link to="/bmstu-frontend/">Главная</Link></Breadcrumb.Item>
         <Breadcrumb.Item><Link to="/bmstu-frontend/applications">Голосования</Link></Breadcrumb.Item>
         <Breadcrumb.Item active>
         {(id=="current")?"Черновик":id}
@@ -111,6 +111,7 @@ function DraftAppl() {
         <div className='field date_of_creation'>Дата создания: {applic.Application.date_of_creation? applic.Application.date_of_creation.slice(0,19).replace('T', " "): "-"}</div>
         <div className='field date_of_formation'>Дата формирования: {applic.Application.date_of_formation? applic.Application.date_of_formation.slice(0,19).replace('T', " "): "-"}</div>
         <div className='field date_of_completion'>Дата завершения: {applic.Application.date_of_completion? applic.Application.date_of_completion.slice(0,19).replace('T', " "): "-"}</div>
+        {id!="current"&&<div className='field QoV'>Кол-во голосов: {applic.Application.QuantityOfVotes?applic.Application.QuantityOfVotes:'не подсчитано'}</div>}
         <div className="descr">
         {id=="current"?<div className='field description'><InputField
                                 error={false}

@@ -7,7 +7,6 @@ import { Voting, searchInVoteList } from './modules/search-in-vote-list.ts'
 import {setNameSQModerAction, useNameSearchQueryModer} from "./slices/dataSlice";
 import {useDispatch} from "react-redux";
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
 
 
 
@@ -36,7 +35,7 @@ useEffect(() => {
   return (
     <>
     <Breadcrumb>
-      <Breadcrumb.Item href="#home">Главная</Breadcrumb.Item>
+      <Breadcrumb.Item href="/bmstu-frontend/">Главная</Breadcrumb.Item>
       <Breadcrumb.Item active>Редактрование названий</Breadcrumb.Item>
     </Breadcrumb>
     <div className='topBar'>

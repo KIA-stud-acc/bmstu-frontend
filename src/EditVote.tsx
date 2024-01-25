@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import InputField from './components/InputField';
 import { useDispatch } from 'react-redux';
-import { chBasketAction, useIsLogged } from './slices/dataSlice';
 import { Voting, voteById } from './modules/vote-by-id';
 
 function EditVote() {
@@ -15,7 +14,6 @@ function EditVote() {
     const [error, setError] = useState(false)
     const { id } = useParams<{ id: string }>();
     const [type, setType] = useState('')
-    const isLogged = useIsLogged()
     const dispatch = useDispatch()
     const [name, setName] = useState('');
 
@@ -152,7 +150,7 @@ function EditVote() {
   return ( 
     <>
     <Breadcrumb>
-        <Breadcrumb.Item><Link to="#home">Главная</Link></Breadcrumb.Item>
+        <Breadcrumb.Item><Link to="/bmstu-frontend/">Главная</Link></Breadcrumb.Item>
         <Breadcrumb.Item><Link to="/bmstu-frontend/moder/vybory">Редактирование названий</Link></Breadcrumb.Item>
         <Breadcrumb.Item active>
         {(id=="create")?"Создание":id}

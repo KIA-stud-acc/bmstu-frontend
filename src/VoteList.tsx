@@ -35,7 +35,7 @@ useEffect(() => {
   return (
     <>
     <Breadcrumb>
-      <Breadcrumb.Item href="#home">Главная</Breadcrumb.Item>
+      <Breadcrumb.Item href="/bmstu-frontend/">Главная</Breadcrumb.Item>
       <Breadcrumb.Item active>Каталог</Breadcrumb.Item>
     </Breadcrumb>
       <InputField

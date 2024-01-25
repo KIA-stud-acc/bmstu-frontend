@@ -58,11 +58,11 @@ const SubmitLogout = async () =>{
   return (
     <Navbar className="navbar-light navbar-expand" expand="lg" >
       <Container fluid className="new flex-column" style={{width:"100%"}}>
-        <Navbar.Brand as={Link} to="#home" className="brand text-center brandcss" style={{fontSize:"2em"}}>Выборы</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/bmstu-frontend/" className="brand text-center brandcss" style={{fontSize:"2em"}}>Выборы</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="w-100 d-flex justify-content-center ">
           <Nav className="me-auto my-2 my-lg-0">
-            <Nav.Link as={Link} to="#home" className="li mx-3 left" style={{flex:"1"}}><p className='navtext'>Главная</p></Nav.Link>
+            <Nav.Link as={Link} to="/bmstu-frontend/" className="li mx-3 left" style={{flex:"1"}}><p className='navtext'>Главная</p></Nav.Link>
             <Nav.Link  as={Link} to="/bmstu-frontend/vybory" className="li mx-3 left" style={{flex:"1"}}>Каталог</Nav.Link>
             <Nav.Link as={Link} to="#link" className="li mx-3 left" style={{flex:"1"}}>Контакты</Nav.Link>
             {useIsLogged() && <><Nav.Link as={Link} to="/bmstu-frontend/applications" className="li mx-3 left" style={{flex:"1"}}>Голосования</Nav.Link></>}
