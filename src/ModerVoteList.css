@@ -3,7 +3,7 @@
     margin-right: 1em;
   }
   .table2 {
-    max-height: calc(100vh - 17.5em);
+    max-height: calc(100vh - 14.5em);
     overflow: auto;
     display: block;
     border-radius: 1rem;
