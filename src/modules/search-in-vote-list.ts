@@ -12,7 +12,7 @@ export interface Voting {
 }
 
 export interface VoteList {
-    draftID: number
+    pages: number
     voting: Voting[]
 }
 
@@ -21,8 +21,8 @@ const filterVotingData = (votingArray: Voting[], nameFilter: string): Voting[] =
 };
 
 
-export const searchInVoteList = async (text=''): Promise<VoteList> =>{
-    return axios.get(`../../api/vybory/?text=${text}`)
+export const searchInVoteList = async (text='', page=1): Promise<VoteList> =>{
+    return axios.get(`../../api/vybory/?text=${text}&page=${page}`)
         .then((response) => response.data)
-        .catch(()=> ({voting:filterVotingData(mockVoteList['voting'], text),draftID:0}))
+        .catch(()=> ({voting:filterVotingData(mockVoteList['voting'], text),pages:1}))
 }

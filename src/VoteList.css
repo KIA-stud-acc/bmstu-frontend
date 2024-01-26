@@ -9,8 +9,30 @@ body {
 }
 .card-deck{
   display: flex;
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.active1 {
+  background-color: #1e50ff;
+  border-radius: 50%;
+}
+
+.page-item {
+  list-style: none;
+  padding: 2px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
 }

@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 const dataSlice = createSlice({
     name: "data",
     initialState: {
+        currentPage:0,
         isLogged:false,
         isModer:false,
         basket:false,
@@ -21,6 +22,9 @@ const dataSlice = createSlice({
         
     },
     reducers: {
+        setCurrentPage(state, {payload}) {  
+            state.currentPage = payload
+        },
         setUsernameSearchQuery(state, {payload}) {  
             state.usernameSearchQuery = payload
         },
@@ -65,6 +69,9 @@ const dataSlice = createSlice({
         },
     }
 })
+
+export const useCurrentPage = () =>
+    useSelector((state:any) => state.ourData.currentPage)
 
 export const useIsLogged = () =>
     useSelector((state:any) => state.ourData.isLogged)
@@ -115,6 +122,7 @@ export const {
     chModer: chModerAction,
     setUsernameSearchQuery: setUsernameSQAction,
     setNameSQModer: setNameSQModerAction,
+    setCurrentPage: setCurrentPageAction,
 } = dataSlice.actions
 
 
